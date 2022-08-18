@@ -42,7 +42,7 @@
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" routerLink="/home">
             <span>
               Bantu Vibes
             </span>
@@ -55,16 +55,16 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
               <li class="nav-item">
-                <a class="nav-link" href="index.html">Home </a>
+                <a class="nav-link" routerLink="/home">Home </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="menu">Menu</a>
+                <a class="nav-link" routerLink="/menu">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about">About</a>
+                <a class="nav-link" routerLink="/about">About</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="book">Book Table <span class="sr-only">(current)</span> </a>
+                <a class="nav-link" routerLink="/book">Book Table <span class="sr-only">(current)</span> </a>
               </li>
             </ul>
             <div class="user_option">
@@ -152,37 +152,28 @@
       <div class="row">
         <div class="col-md-6">
           <div class="form_container">
-            <form action="">
+            <form  [formGroup]='form' (submit)="submit()" id="bookform" #f="ngForm">
               <div>
-                <input type="text" class="form-control" placeholder="Your Name" />
+                <input type="text" formControlName="name" class="form-control" placeholder="Your Name" />
               </div>
               <div>
-                <input type="text" class="form-control" placeholder="Phone Number" />
+                <input type="text" class="form-control" formControlName="phone_number" placeholder="Phone Number" />
               </div>
               <div>
-                <input type="email" class="form-control" placeholder="Your Email" />
+                <input type="email" required class="form-control" formControlName="email" placeholder="Your Email" />
               </div>
               <div>
-                <select class="form-control nice-select wide">
+                <select class="form-control nice-select wide"  formControlName="number_of_chairs"  >
                   <option value="" disabled selected>
                     How many persons?
                   </option>
-                  <option value="">
-                    2
-                  </option>
-                  <option value="">
-                    3
-                  </option>
-                  <option value="">
-                    4
-                  </option>
-                  <option value="">
-                    5
+                  <option *ngFor="let nb of nbPlaces " [value]="nb">
+                    {{ nb }}
                   </option>
                 </select>
               </div>
               <div>
-                <input type="date" class="form-control">
+                <input type="date" class="form-control" formControlName="date_reserv">
               </div>
               <div class="btn_box">
                 <button>
