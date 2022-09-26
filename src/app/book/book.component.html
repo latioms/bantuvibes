@@ -154,15 +154,15 @@
           <div class="form_container">
             <form  [formGroup]='form' (submit)="submit()" id="bookform" #f="ngForm">
               <div>
-                <input type="text" formControlName="name" class="form-control" placeholder="Your Name" />
+                <input type="text" formControlName="name" class="form-control" required placeholder="Your Name" />
               </div>
               <div>
-                <input type="text" class="form-control" formControlName="phone_number" placeholder="Phone Number" />
+                <input type="tel"  minlength="9" maxlength="14" required class="form-control" formControlName="phone_number" placeholder="Phone Number (US Only)" />
               </div>
               <div>
-                <input type="email" required class="form-control" formControlName="email" placeholder="Your Email" />
+                <input type="email" required class="form-control" required  formControlName="email" placeholder="Your Email" />
               </div>
-              <div>
+              <!-- <div>
                 <select class="form-control nice-select wide"  formControlName="number_of_chairs"  >
                   <option value="" disabled selected>
                     How many persons?
@@ -171,9 +171,12 @@
                     {{ nb }}
                   </option>
                 </select>
+              </div> -->
+              <div>
+                <input type="number" class="form-control" required formControlName="number_of_chairs" placeholder="How many persons?" />
               </div>
               <div>
-                <input type="date" class="form-control" formControlName="date_reserv">
+                <input type="date" class="form-control" required formControlName="date_reserv">
               </div>
               <div class="btn_box">
                 <button>
@@ -206,19 +209,19 @@
               <a href="">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
-                  Location
+                  6788 Synott rd, Houston, TX 77083.
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                  Call +1 (346) 381-4284
+                  Call +01 346-381-4284
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
-                  demo@gmail.com
+                  occ@bantuvibesrestaurant.com
                 </span>
               </a>
             </div>
@@ -230,7 +233,8 @@
               Bantu Vibes
             </a>
             <p>
-              Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
+              Your Best Bantu's Meals. <br>
+              Support us in Social Media
             </p>
             <div class="footer_social">
               <a href="">
@@ -266,9 +270,7 @@
       <div class="footer-info">
         <p>
           &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Free Html Templates</a><br><br>
-          &copy; <span id="displayYear"></span> Distributed By
-          <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+          <a href="/home">Bantu Vibes Restaurant</a><br><br>
         </p>
       </div>
     </div>

@@ -11,6 +11,9 @@ import { ReservationsComponent } from './gestion/reservations/reservations.compo
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { GestionModule } from './gestion/gestion.module';
+import { RouterModule } from '@angular/router';
+import { GestionComponent } from './gestion/gestion.component';
 
 @NgModule({
   declarations: [
@@ -18,16 +21,16 @@ import { HomeComponent } from './home/home.component';
     BookComponent,
     MenuComponent,
     AboutComponent,
-    PlatsComponent,
     HomeComponent,
-    ReservationsComponent
+    ReservationsComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    RouterModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
